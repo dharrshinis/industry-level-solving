@@ -1,0 +1,29 @@
+class InvalidCategoryError(Exception):
+    pass
+
+class NegativeConsumptionError(Exception):
+    pass
+#validation
+if consumption < 0:
+    raise NegativeConsumptionError(
+        "Consumption cannot be negative"
+    )
+
+if category not in tariffs:
+    raise InvalidCategoryError(
+        "Unknown customer category"
+    )
+
+if not customer_id:
+    raise ValueError("Missing Customer ID") 
+#exception handing:
+try:
+    # processing code
+except InvalidCategoryError as e:
+    print(e)
+
+except NegativeConsumptionError as e:
+    print(e)
+
+except Exception as e:
+    print("Error:", e) 
