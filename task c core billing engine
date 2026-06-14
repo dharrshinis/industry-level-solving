@@ -1,0 +1,30 @@
+#sample customer csv
+customer_id,type,consumption,late
+C101,Residential,45,Yes
+C102,Commercial,80,No
+C103,Industrial,120,Yes
+
+#billing logic
+def calculate_slab_bill(consumption, slabs):
+    bill = 0
+    previous = 0
+
+    for slab in slabs:
+        limit = slab["limit"]
+        rate = slab["rate"]
+
+        if limit == -1:
+            bill += (consumption - previous) * rate
+            break
+
+        if consumption > limit:
+            bill += (limit - previous) * rate
+            previous = limit
+        else:
+            bill += (consumption - previous) * rate
+            break
+
+    return bill
+#late fee
+late_fee = bill * 0.05 if late == "Yes" else 0
+total = bill + late_fee
