@@ -1,0 +1,15 @@
+#bills.report
+Customer ID : C101
+Type        : Residential
+Consumption : 45 kL
+Bill Amount : ₹1175
+Late Fee    : ₹58.75
+Total Due   : ₹1233.7-
+
+Customer ID : C102
+Type        : Commercial
+Consumption : 80 kL
+Bill Amount : ₹4050
+Late Fee    : ₹0
+Total Due   : ₹4050
+
